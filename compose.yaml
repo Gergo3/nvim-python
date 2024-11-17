@@ -1,0 +1,10 @@
+services:
+  ide:
+    image: gergo111/nvim-base
+    volumes:
+      - type: bind
+        source: ./
+        target: /root/src
+    stdin_open: true
+    tty: true
+
