@@ -9,20 +9,28 @@ RUN pacman -Syu --noconfirm --noprogressbar --needed\
     python-pip \
     python-pipx \
     python-setuptools \
-    && pacman -Scc
+    && pacman -Scc --noconfirm --noprogressbar --needed
 
-RUN pip install --no-cache-dir --upgrade pip setuptools && \
-    pip install --no-cache-dir \
-    python-lsp-server \
+RUN pipx ensurepath &&\
+    source ~/.bashrc &&\
+    pipx install \
     "python-lsp-server[all]" \
+    && pipx inject python-lsp-server \
     pylsp-mypy \
     python-lsp-isort \
     python-lsp-black \
     pylsp-rope \
-    python-lsp-ruff
-
+    python-lsp-ruff &&\
+    ln -s /root/.local/pipx/venvs/python-lsp-server/bin/pylsp /usr/local/bin/pylsp
     
-COPY .config /root/build
+COPY .config /root/build/.config
 
-RUN diff3 -m /root/.config/nvim/init.vim /root/build/.config/nvim/init.vim.bak /root/build/.config/nvim/init.vim > /root/.config/nvim/init.vim
+#RUN $[ -e /root ] && echo a
+#RUN $[ -e /root/.config ] && echo a
+#RUN $[ -e /root/.config/nvim ] && echo a
+
+#RUN cat /root/build/.config/nvim/init.vim
+
+#RUN diff3 -m /root/.config/nvim/init.vim /root/build/.config/nvim/init.vim.bak /root/build/.config/nvim/init.vim > /root/.config/nvim/init.vim.new \
+#    && cat /root/.config/nvim/init.vim.new > /root/.config/nvim/init.vim
 

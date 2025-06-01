@@ -1,6 +1,6 @@
 services:
   ide:
-    image: gergo111/nvim-base
+    image: nvim-python
     volumes:
       - type: bind
         source: ./
