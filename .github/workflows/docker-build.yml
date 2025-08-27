@@ -1,0 +1,13 @@
+name: Build and Push Docker
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    uses: Gergo3/nvim-docker-workflows/.github/workflows/docker-build.yml@master
+    with:
+      image-name: nvim-python
+    secrets: inherit
+
