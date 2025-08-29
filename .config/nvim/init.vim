@@ -19,6 +19,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "lspconfig
 Plug 'neovim/nvim-lspconfig'
 
+Plug 'mfussenegger/nvim-dap-python'
+
 "luasnip
 Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
 Plug 'rafamadriz/friendly-snippets'
@@ -43,6 +45,12 @@ Plug 'windwp/nvim-autopairs'
 "Plug 'folke/lazydev.nvim'
 
 call plug#end()
+
+"python-dap
+lua << EOF
+    require("dap-python").setup("python3")
+
+EOF
 
 "indentation guides
 lua require("ibl").setup()
