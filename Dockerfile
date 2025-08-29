@@ -15,7 +15,7 @@ RUN pipx ensurepath &&\
     source ~/.bashrc &&\
     pipx install \
     "python-lsp-server[all]" \
-    && pipx inject 
+    && pipx inject \
     debugpy \
     python-lsp-server \
     pylsp-mypy \
