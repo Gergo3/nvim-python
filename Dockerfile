@@ -4,7 +4,7 @@
 FROM gergo111/nvim-base AS python-3
 
 #add ~/.local/bin to path
-ENV PATH="$HOME/.local/bin"
+ENV PATH="$HOME/.local/bin:${PATH}"
 
 #install packages
 RUN pacman -Syu --noconfirm --noprogressbar --needed\
