@@ -25,8 +25,8 @@ RUN pipx ensurepath &&\
     python-lsp-isort \
     python-lsp-black \
     pylsp-rope \
-    python-lsp-ruff &&\
-    ln -s /root/.local/share/pipx/venvs/python-lsp-server/bin/pylsp /usr/local/bin/pylsp
+    python-lsp-ruff
+#    ln -s /root/.local/share/pipx/venvs/python-lsp-server/bin/pylsp /usr/local/bin/pylsp
     
 COPY .config /root/build/.config
 
