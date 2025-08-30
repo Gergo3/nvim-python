@@ -17,7 +17,7 @@ call plug#begin()
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 
 "lspconfig
-Plug 'neovim/nvim-lspconfig
+Plug 'neovim/nvim-lspconfig'
 
 
 "dap
