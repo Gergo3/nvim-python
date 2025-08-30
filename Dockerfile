@@ -14,9 +14,7 @@ RUN pacman -Syu --noconfirm --noprogressbar --needed\
     python-setuptools \
     && pacman -Scc --noconfirm --noprogressbar --needed
 
-RUN pipx ensurepath &&\
-    source ~/.bashrc &&\
-    pipx install \
+RUN pipx install \
     "python-lsp-server[all]" \
     debugpy \
     && pipx inject \
