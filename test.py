@@ -5,4 +5,5 @@ for i in range(random.randint(3,5)):
     print("a")
 
 foo = ["bar", "baz", "asdf"]
+print("asdf")
 print(foo)
