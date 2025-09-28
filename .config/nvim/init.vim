@@ -111,7 +111,7 @@ EOF
 
 
 "lspconfig
-lua require'lspconfig'.vimls.setup{}
+lua vim.lsp.enable(vimls)
 lua vim.lsp.enable(pylsp)
 
 lua << EOF
