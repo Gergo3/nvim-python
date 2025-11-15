@@ -1,4 +1,12 @@
 services:
+  ide-dev:
+    image: gergo111/nvim-python:dev
+    volumes:
+      - type: bind
+        source: ./
+        target: /root/src
+    stdin_open: true
+    tty: true
   ide:
     image: gergo111/nvim-python
     volumes:

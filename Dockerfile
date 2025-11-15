@@ -26,7 +26,7 @@ RUN pipx install \
     python-lsp-ruff
 #    ln -s /root/.local/share/pipx/venvs/python-lsp-server/bin/pylsp /usr/local/bin/pylsp
     
-COPY .config /root/build/.config
+COPY .config /root/.config
 
 #RUN $[ -e /root ] && echo a
 #RUN $[ -e /root/.config ] && echo a
