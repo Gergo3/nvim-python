@@ -34,8 +34,8 @@ COPY .config /root/build/.config
 
 #RUN cat /root/build/.config/nvim/init.vim
 
-RUN diff3 -m /root/.config/nvim/init.vim /root/build/.config/nvim/init.vim.bak /root/build/.config/nvim/init.vim > /root/.config/nvim/init.vim.new \
-    && cat /root/.config/nvim/init.vim.new > /root/.config/nvim/init.vim
+#RUN diff3 -m /root/.config/nvim/init.vim /root/build/.config/nvim/init.vim.bak /root/build/.config/nvim/init.vim > /root/.config/nvim/init.vim.new \
+#    && cat /root/.config/nvim/init.vim.new > /root/.config/nvim/init.vim
 
 RUN nvim +PlugInstall +qall
 
